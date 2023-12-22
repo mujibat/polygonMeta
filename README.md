@@ -1,66 +1,42 @@
-## Foundry
+# Panda Collection NFT Contract
 
-**Foundry is a blazing fast, portable and modular toolkit for Ethereum application development written in Rust.**
+## Overview
 
-Foundry consists of:
+This Solidity smart contract deploys an ERC721A-based NFT collection named "Panda Collection" on the Ethereum blockchain. The collection consists of five unique Panda-themed items, each with a distinct description. Additionally, the contract supports metadata storage on IPFS using the base URI "ipfs://bafybeibytrd6ifwzszvanllj6azeo7liflb5q5tfkrsfcod6cwiwqz5rke/panda". The contract owner has the exclusive right to mint batches of these NFTs and retrieve the prompt descriptions used for image generation.
 
--   **Forge**: Ethereum testing framework (like Truffle, Hardhat and DappTools).
--   **Cast**: Swiss army knife for interacting with EVM smart contracts, sending transactions and getting chain data.
--   **Anvil**: Local Ethereum node, akin to Ganache, Hardhat Network.
--   **Chisel**: Fast, utilitarian, and verbose solidity REPL.
+## Features
 
-## Documentation
+1. Deploy an ERC721A-based NFT collection on Ethereum.
+2. Store metadata on IPFS using a predefined base URI.
+3. Mint batches of NFTs, with ownership restricted to the contract owner.
+4. Retrieve prompt descriptions used for image generation.
 
-https://book.getfoundry.sh/
+## Contract Details
 
-## Usage
+- **Contract Name:** PandaCollection
+- **Symbol:** PDC (Panda Collection)
+- **Base URI:** ipfs://bafybeibytrd6ifwzszvanllj6azeo7liflb5q5tfkrsfcod6cwiwqz5rke/panda
 
-### Build
+### Mint Batches
 
-```shell
-$ forge build
+The contract owner can mint batches of NFTs using the `MintBatches` function. This function requires the recipient's address and the quantity of NFTs to be minted.
+
+```solidity
+function MintBatches(address to, uint quantity) public onlyOwner {
+    _safeMint(to, quantity, "");
+}
 ```
 
-### Test
+### Prompt Descriptions
 
-```shell
-$ forge test
+The promptDescription function allows anyone to retrieve an array of Panda collection descriptions used for image generation.
+
+```solidity
+function promptDescription() public view returns (string[] memory) {
+    return collectionDescriptions;
+}
 ```
 
-### Format
+### Polygon Mumbai Bridge
 
-```shell
-$ forge fmt
-```
-
-### Gas Snapshots
-
-```shell
-$ forge snapshot
-```
-
-### Anvil
-
-```shell
-$ anvil
-```
-
-### Deploy
-
-```shell
-$ forge script script/Counter.s.sol:CounterScript --rpc-url <your_rpc_url> --private-key <your_private_key>
-```
-
-### Cast
-
-```shell
-$ cast <subcommand>
-```
-
-### Help
-
-```shell
-$ forge --help
-$ anvil --help
-$ cast --help
-```
+The contract has been bridged to Polygon Mumbai using the Foundry script along side the FxPortal Bridge.
