@@ -1,8 +1,8 @@
-# Panda Collection NFT Contract
+# AI Collection NFT Contract
 
 ## Overview
 
-This Solidity smart contract deploys an ERC721A-based NFT collection named "Panda Collection" on the Ethereum blockchain. The collection consists of five unique Panda-themed items, each with a distinct description. Additionally, the contract supports metadata storage on IPFS using the base URI "ipfs://bafybeibytrd6ifwzszvanllj6azeo7liflb5q5tfkrsfcod6cwiwqz5rke/panda". The contract owner has the exclusive right to mint batches of these NFTs and retrieve the prompt descriptions used for image generation.
+This Solidity smart contract deploys an ERC721A-based NFT collection named "AI Collection" on the Ethereum blockchain. The collection consists of five unique AI-themed items, each with a distinct description. Additionally, the contract supports metadata storage on IPFS using the base URI "ipfs://QmXppnKSEp3opCDc4jDv1wVwekp1UDwGFcntioXAB4jE7J/BeretDog". The contract owner has the exclusive right to mint batches of these NFTs and retrieve the prompt descriptions used for image generation.
 
 ## Features
 
@@ -13,9 +13,9 @@ This Solidity smart contract deploys an ERC721A-based NFT collection named "Pand
 
 ## Contract Details
 
-- **Contract Name:** PandaCollection
-- **Symbol:** PDC (Panda Collection)
-- **Base URI:** ipfs://bafybeibytrd6ifwzszvanllj6azeo7liflb5q5tfkrsfcod6cwiwqz5rke/panda
+- **Contract Name:** AICollection
+- **Symbol:** PDC (AI Collection)
+- **Base URI:** ipfs://QmXppnKSEp3opCDc4jDv1wVwekp1UDwGFcntioXAB4jE7J/BeretDog
 
 ### Mint Batches
 
@@ -29,7 +29,7 @@ function MintBatches(address to, uint quantity) public onlyOwner {
 
 ### Prompt Descriptions
 
-The promptDescription function allows anyone to retrieve an array of Panda collection descriptions used for image generation.
+The promptDescription function allows anyone to retrieve an array of AI collection descriptions used for image generation.
 
 ```solidity
 function promptDescription() public view returns (string[] memory) {
