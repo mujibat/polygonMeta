@@ -1,0 +1,10 @@
+{
+
+"name": "Annoyed_Cat",
+"image": "ipfs://QmR9T15Vm92E4bDw8yZzdeSFUiT56YAhcMJkc7cYbopFUG/Annoyedcat.png",
+ "attributes":{
+  "id": 1,
+  "type": "Animal"
+ }
+
+}

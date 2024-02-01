@@ -1,19 +1,19 @@
 // SPDX-License-Identifier: SEE LICENSE IN LICENSE
-pragma solidity ^0.8.23;
+pragma solidity ^0.8.19;
 
 import "ERC721A/ERC721A.sol";
 
-contract PandaCollection is ERC721A {
+contract AICollection is ERC721A {
     address owner;
     string[] collectionDescriptions = [
-        "Smiling baby Panda",
-        "Sitting baby Panda",
-        "Sitting baby Panda in tree",
-        "Smiling Adult Panda",
-        "Adult eating panda"
+        "annoying Cat",
+        "Dog In A Beret",
+        "Dog and A Cat Snuggling",
+        "Monkey In Spacesuit",
+        "Teddy bear skating"
     ];
 
-    constructor() ERC721A("Panda Collection", "PDC") {
+    constructor() ERC721A("AI Collection", "AIC") {
         owner = msg.sender;
     }
 
@@ -24,7 +24,7 @@ contract PandaCollection is ERC721A {
 
     function _baseURI() internal view virtual override returns (string memory) {
         return
-            "ipfs://bafybeibytrd6ifwzszvanllj6azeo7liflb5q5tfkrsfcod6cwiwqz5rke/panda";
+            "ipfs://QmXppnKSEp3opCDc4jDv1wVwekp1UDwGFcntioXAB4jE7J/BeretDog.png";
     }
 
     function tokenURI(

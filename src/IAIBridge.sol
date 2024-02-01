@@ -1,7 +1,7 @@
 // SPDX-License-Identifier:UNLICENSED
-pragma solidity ^0.8.23;
+pragma solidity ^0.8.19;
 
-interface IFxBridge {
+interface IAIBridge {
     function deposit(
         address rootToken,
         address user,

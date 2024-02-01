@@ -1,0 +1,8 @@
+{
+    "name": "TEDDY",
+    "image": "ipfs://QmX9uQAgib1HJsfRxzPV2KHuYxAvdfnTZbMrHqZGW8s4ea/teddybear.png",
+    "attributes": {
+        "id": 4,
+        "type": "animal"
+    }
+}

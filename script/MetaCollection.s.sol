@@ -2,15 +2,15 @@
 pragma solidity ^0.8.23;
 
 import {Script, console2} from "forge-std/Script.sol";
-import {PandaCollection} from "../src/MetaCollection.sol";
-import {IFxBridge} from "../src/IFxBridge.sol";
+import {AICollection} from "../src/MetaCollection.sol";
+import {IAIBridge} from "../src/IAIBridge.sol";
 
-contract PandaCollectionScript is Script {
+contract AICollectionScript is Script {
     address to = 0x764693DD666E8dD9275CDE8F05C6B07446B1d941;
 
-    IFxBridge bridge = IFxBridge(0xF9bc4a80464E48369303196645e876c8C7D972de);
+    IAIBridge bridge = IAIBridge(0xF9bc4a80464E48369303196645e876c8C7D972de);
     address operator = 0xF9bc4a80464E48369303196645e876c8C7D972de;
-    PandaCollection collection;
+    AICollection collection;
 
     function setUp() public {}
 
@@ -18,7 +18,7 @@ contract PandaCollectionScript is Script {
         uint256 deployerPrivateKey = vm.envUint("PRIVATE_KEY");
         vm.startBroadcast(deployerPrivateKey);
 
-        collection = new PandaCollection();
+        collection = new AICollection();
 
         console2.log("==========minting 5 batches==========");
         collection.MintBatches(to, 5);
@@ -39,7 +39,7 @@ contract PandaCollectionScript is Script {
         vm.stopBroadcast();
     }
 
-    function showAddr() public view returns (PandaCollection) {
+    function showAddr() public view returns (AICollection) {
         return collection;
     }
 }

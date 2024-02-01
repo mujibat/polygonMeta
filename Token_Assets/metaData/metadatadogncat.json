@@ -1,0 +1,10 @@
+{
+
+"name": "Dog_And_Cat",
+"image": "ipfs://QmV1ZkRnFjV4QGtk4NGYn6uBrQ35kmGXbtn2r8tePLozC8/DogandCat.png",
+ "attributes":{
+  "id": 2,
+  "type": "animals"
+ }
+
+}
